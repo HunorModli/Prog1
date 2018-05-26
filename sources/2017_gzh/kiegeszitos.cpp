@@ -18,12 +18,43 @@ using namespace std;
 */
 
 // Innentol
+    int hatezmi = 0;
+    struct A {
+        int x;
+
+        A() {
+            hatezmi++;
+            x = 42;
+        }
+
+        A(int _x) {
+            x = _x;
+        }
+
+        bool operator<(A other) const {
+            return x > other.x;
+        }
+
+        void setB(int b) {
+            x = b;
+        }
+
+        int& getB() {
+            return x;
+        }
+
+        ~A() {
+            hatezmi--;
+        }
+
+
+    };
 // Idaig
 
 int main()
 {
     int pont = 0;
-/*
+
     A a;
     ellenoriz(a.x==42 , pont)
 
@@ -50,12 +81,10 @@ int main()
     }
     ellenoriz(hatezmi == 3, pont)
     ellenoriz(hatezmi == 3, pont)
-
+    
     A d;
     ellenoriz(hatezmi == 4, pont)
     ellenoriz(hatezmi == 4, pont)
-*/
-
 
     cout << pont << " / 10 pont" << endl;
     return 0;
