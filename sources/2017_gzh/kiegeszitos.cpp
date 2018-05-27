@@ -81,7 +81,7 @@ int main()
     }
     ellenoriz(hatezmi == 3, pont)
     ellenoriz(hatezmi == 3, pont)
-    
+
     A d;
     ellenoriz(hatezmi == 4, pont)
     ellenoriz(hatezmi == 4, pont)
