@@ -142,7 +142,7 @@ public:
 
         if (filmekKategoriahoz.count(tmp)) { // ha létezik ilyen kategória akkor maxkeresés
 
-            vector<Film> v = filmekKategoriahoz.at(tmp);
+            vector<Film> v = filmekKategoriahoz.at(tmp); // tmp kulcshoz lekéri hogy milyen érték szerepel a Map-ben: jelen esetben ez egy vector<Film>
 
             // algorithm könyvtár része. működés:
             // param1: iterátor a tömb elejére
