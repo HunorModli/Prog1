@@ -28,7 +28,6 @@ public:
     }
 };
 
-
 int main() {
     Filmek osszesFilm;
     //TODO: user interface megírása.
