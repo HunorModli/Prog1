@@ -13,10 +13,12 @@ struct Ember {
     int kor;
     string nev;
     int kutyakSzama;
-//        Ember() {
-//            kor = 0;
-//            nev = "Ismeretlen";
-//        }
+
+    Ember() {
+        kor = 0;
+        nev = "Ismeretlen";
+        kutyakSzama = 0;
+    }
 
     Ember(int k, string n) {
         kor = k;
@@ -64,10 +66,10 @@ struct Tulajdonsagok {
 };
 
 bool operator < (Ember e1, Ember e2) {
-    if (e1.kutyakSzama == e2.kutyakSzama) {
-        return e1.kor < e2.kor;
+    if (e1.kor == e2.kor) {
+        return e1.nev < e2.nev;
     }
-    return e1.kutyakSzama < e2.kutyakSzama;
+    return e1.kor < e2.kor;
 }
 
 int main(){
@@ -120,7 +122,7 @@ int main(){
 //    } else {
 //        cout << "NEM ÜRES" << endl;
 //    }
-
+//
 //    for (auto i : l) {
 //        cout << i << endl;
 //    }
@@ -144,6 +146,7 @@ int main(){
 //    }
 //    cout << endl;
 //
+//
 //    cout << "3:" << s.count(3) << endl;
 //    cout << "7:" << s.count(7) << endl;
 
@@ -151,17 +154,17 @@ int main(){
 
 
 
-//    Ember e;
+//    Ember e; // 0 paraméteres konstruktor fut le.
 //    cout << e.nev << " , " << e.kor << endl;
-//    Ember e1(65, "Feri");
+//    Ember e1(65, "Feri"); // 2 paraméteres konstruktor fut le.
 //    cout << "Név: " << e1.nev << " , " << e1.kor << " Kutyak: " << e1.kutyakSzama << endl;
-
-//    Ember e2(25, "Béla", 2);
+//
+//    Ember e2(25, "Béla", 2); // 3 paraméteres konstruktor fut le.
 //    cout << "Név: " << e2.nev << " , " << e2.kor << " Kutyak: " << e2.kutyakSzama << endl;
-
-//    Ember e3(30, "Anna", 2);
-//    cout << "Név: " << e2.nev << " , " << e2.kor << " Kutyak: " << e2.kutyakSzama << endl;
-
+//
+//    Ember e3(25, "Anna", 2);
+//    cout << "Név: " << e3.nev << " , " << e3.kor << " Kutyak: " << e3.kutyakSzama << endl;
+//
 //    set<Ember> emberek;
 //    cout << "size: " << emberek.size() << endl;
 //    emberek.insert(e1);
@@ -181,14 +184,10 @@ int main(){
 //    m[3] = "harom";
 //    m[0] = "nulla";
 //    m[2] = "ketto";
-//
+////
 //    for (auto i : m) {
 //        cout << i.first << " : " << i.second << endl;
-//    }
-
-    Ember e1(65, "Feri");
-    Ember e2(25, "Béla", 2);
-    Ember e3(30, "Anna", 2);
+//
 
 //    map<string, Tulajdonsagok> emberek;
 //    emberek["Béla"] = Tulajdonsagok(25,2,"Diófa utca 3.");
@@ -197,28 +196,33 @@ int main(){
 //    for (auto i : emberek) {
 //        cout << i.first << " --> " << i.second.kor << "," << i.second.kutyakSzama << "," << i.second.lakcim << endl;
 //    }
-    map<Ember,vector<Kutya>> emberekKutyai;
 
-    Kutya bloki("Blöki", 4);
-    Kutya szuszi("Szuszi", 6);
-    vector<Kutya> belaKutyai = {bloki,szuszi};
-
-    Kutya aprod("Apród", 3);
-    Kutya leci("Léci", 10);
-    vector<Kutya> annaKutyai = {aprod,leci};
-    vector<Kutya> feriKutyai;
-
-    emberekKutyai[e1] = feriKutyai;
-    emberekKutyai[e2] = belaKutyai;
-    emberekKutyai[e3] = annaKutyai;
-
-    for (auto jelenlegiGazda : emberekKutyai) {
-        cout << "Név:"
-             << jelenlegiGazda.first.nev
-             << " --> ";
-        for (auto jelenlegiKutya : jelenlegiGazda.second) {
-            cout << jelenlegiKutya.nev << "," << jelenlegiKutya.kor << endl;
-        }
-        cout << endl;
-    }
+//    Ember e1(65, "Feri");
+//    Ember e2(25, "Béla", 2);
+//    Ember e3(30, "Anna", 2);
+//
+//    map<Ember,vector<Kutya>> emberekKutyai;
+//
+//    Kutya bloki("Blöki", 4);
+//    Kutya szuszi("Szuszi", 6);
+//    vector<Kutya> belaKutyai = {bloki,szuszi};
+//
+//    Kutya aprod("Apród", 3);
+//    Kutya leci("Léci", 10);
+//    vector<Kutya> annaKutyai = {aprod,leci};
+//    vector<Kutya> feriKutyai;
+////
+//    emberekKutyai[e1] = feriKutyai;
+//    emberekKutyai[e2] = belaKutyai;
+//    emberekKutyai[e3] = annaKutyai;
+//
+//    for (auto jelenlegiGazda : emberekKutyai) {
+//        cout << "Név:"
+//             << jelenlegiGazda.first.nev
+//             << " --> ";
+//        for (auto jelenlegiKutya : jelenlegiGazda.second) {
+//            cout << jelenlegiKutya.nev << "," << jelenlegiKutya.kor << endl;
+//        }
+//        cout << endl;
+//    }
 }
